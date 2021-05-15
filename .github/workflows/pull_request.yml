@@ -6,12 +6,12 @@ on:
 
 jobs:
   install_husky:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: install commitlint
         run: npm install
   run_composer:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         php-version: [ 7.3, 7.4 ,8.x ]
