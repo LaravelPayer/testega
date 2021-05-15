@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: install commitlint
         run: npm install
+      - name: run commit lint
+        run: run commitlint --edit $1 --verbose
   run_composer:
     runs-on: ubuntu-latest
     strategy:
