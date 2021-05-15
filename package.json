@@ -6,6 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "body-max-line-length": [0, "always", "Infinity"],
+      "header-max-length": [0, "always", "Infinity"]
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IgorDePaula/testega.git"
