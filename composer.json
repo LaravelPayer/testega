@@ -1,0 +1,23 @@
+{
+    "name": "igor/testega",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abracadabra\\": "src/Abracadabra"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AbracadabraTest\\": "tests/AbracadabraTest"
+        }
+    },
+    "authors": [
+        {
+            "name": "Igor de Paula",
+            "email": "principe.borodin@gmail.com"
+        }
+    ],
+    "require": {}
+}
