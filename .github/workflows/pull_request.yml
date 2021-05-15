@@ -4,23 +4,23 @@ on:
   pull_request:
     types: [opened]
 
-  jobs:
-    install_husky:
-      run-on: ubuntu-latest
-      steps:
-        - name: install commitlint
-          run: npm install
-    run_composer:
-      run-on: ubuntu-latest
-      strategy:
-        matrix:
-          php-version: [ 7.3, 7.4 ,8.x ]
-      steps:
-        - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
-          with:
-            php-version: ${{ matrix.php-version }}
-        - name: composer install
-          run: composer install
-        - name: execute php testes
-          run: ./vendor/bin/phpunit
+jobs:
+  install_husky:
+    run-on: ubuntu-latest
+    steps:
+      - name: install commitlint
+        run: npm install
+  run_composer:
+    run-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: [ 7.3, 7.4 ,8.x ]
+    steps:
+      - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+        with:
+          php-version: ${{ matrix.php-version }}
+      - name: composer install
+        run: composer install
+      - name: execute php testes
+        run: ./vendor/bin/phpunit
 
