@@ -15,8 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: install commitlint
         run: npm install
-      - name: run commit lint
-        run: npx commitlint --edit $1 --verbose
       - name: composer install
         run: composer install
       - name: execute php testes
