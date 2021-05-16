@@ -14,7 +14,6 @@ class MathTest extends TestCase
 	public function sumIt()
 	{
 		$math = new Math();
-		
 		$this->assertEquals(3, $math->sum(1,2));
 	}
 	
@@ -25,7 +24,6 @@ class MathTest extends TestCase
 	public function errorsumIt()
 	{
 		$math = new Math();
-		
 		$this->assertEquals(3, $math->sum(1,2));
 	}
 	/**
@@ -35,7 +33,6 @@ class MathTest extends TestCase
 	public function errorsumIts()
 	{
 		$math = new Math();
-		
 		$this->assertEquals(3, $math->sum(1,2));
 	}
 }
