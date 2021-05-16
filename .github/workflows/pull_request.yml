@@ -15,7 +15,7 @@ jobs:
       - name: execute commitlint
         run: git log -1 --pretty=format:"%s" | npx commitlint
       - name: git log
-        run: git log -1 --pretty=format:"%s" | npx commitlint
+        run: git log -1 --pretty=format:"%s"
       - name: composer install
         run: composer install
       - name: execute php testes
