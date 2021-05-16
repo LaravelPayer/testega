@@ -14,6 +14,8 @@ jobs:
           fetch-dept: 0
       - name: execute commitlint
         run: git log -1 --pretty=format:"%s" | npx commitlint
+      - name: git log
+        run: git log -1 --pretty=format:"%s" | npx commitlint
       - name: composer install
         run: composer install
       - name: execute php testes
