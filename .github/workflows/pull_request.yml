@@ -11,18 +11,17 @@ jobs:
       matrix:
         php-version: [ 7.3, 7.4 ,8.x ]
     steps:
-      - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
-        with:
-          php-version: ${{ matrix.php-version }}
+
       - uses: actions/checkout@v2
+        with:
+          fetch-dept: 0
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
-      - uses: wagoid/commitlint-github-action@v3
-        env:
-          NODE_PATH: ${{ github.workspace }}/node_modules
       - name: install commitlint
         run: npm install
+      - name: execute commitlint
+        run: npx commitlint --from=HEAD~1
       - name: composer install
         run: composer install
       - name: execute php testes
