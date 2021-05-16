@@ -17,4 +17,15 @@ class MathTest extends TestCase
 		
 		$this->assertEquals(3, $math->sum(1,2));
 	}
+	
+	/**
+	 * @test
+	 *
+	 */
+	public function errorsumIt()
+	{
+		$math = new Math();
+		
+		$this->assertEquals(3, $math->sum(1,2));
+	}
 }
