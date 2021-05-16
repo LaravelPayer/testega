@@ -13,6 +13,9 @@ jobs:
         with:
           php-version: ${{ matrix.php-version }}
       - uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+      - uses: wagoid/commitlint-github-action@v3
       - name: install commitlint
         run: npm install
       - name: composer install
