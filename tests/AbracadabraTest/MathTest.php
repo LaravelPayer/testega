@@ -26,7 +26,7 @@ class MathTest extends TestCase
 	{
 		$math = new Math();
 		
-		$this->assertEquals(3, $math->sum(1,2));
+		$this->assertEquals(3, $math->sum(2,2));
 	}
 	/**
 	 * @test
