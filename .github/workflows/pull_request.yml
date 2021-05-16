@@ -13,7 +13,12 @@ jobs:
         with:
           php-version: ${{ matrix.php-version }}
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
       - uses: wagoid/commitlint-github-action@v3
+        env:
+          NODE_PATH: ${{ github.workspace }}/node_modules
       - name: install commitlint
         run: npm install
       - name: composer install
