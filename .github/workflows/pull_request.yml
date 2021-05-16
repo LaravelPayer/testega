@@ -5,14 +5,7 @@ on:
     types: [opened]
 
 jobs:
-  install_husky:
-    runs-on: ubuntu-latest
-    steps:
-      - name: install commitlint
-        run: npm install
-      - name: run commit lint
-        run: npx commitlint --edit $1 --verbose
-  run_composer:
+  allow_pull_request:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,6 +15,10 @@ jobs:
         with:
           php-version: ${{ matrix.php-version }}
       - uses: actions/checkout@v2
+      - name: install commitlint
+        run: npm install
+      - name: run commit lint
+        run: npx commitlint --edit $1 --verbose
       - name: composer install
         run: composer install
       - name: execute php testes

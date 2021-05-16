@@ -28,4 +28,14 @@ class MathTest extends TestCase
 		
 		$this->assertEquals(3, $math->sum(1,2));
 	}
+	/**
+	 * @test
+	 *
+	 */
+	public function errorsumIts()
+	{
+		$math = new Math();
+		
+		$this->assertEquals(3, $math->sum(1,2));
+	}
 }
