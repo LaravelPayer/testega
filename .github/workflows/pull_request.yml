@@ -19,7 +19,7 @@ jobs:
 
       - name: get commit message
         run: |
-           echo "::`echo name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})`::"
+           echo "::`echo $(git log --format=%B -n 2 ${{ github.event.after }})`::"
       - name: show commit message
         run: echo $commitmsg
       - name: show commit message 2
