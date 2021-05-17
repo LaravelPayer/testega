@@ -22,7 +22,7 @@ jobs:
            echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})
       - name: show commit message
         run: echo $commitmsg
-    - name: show commit message 2
+      - name: show commit message 2
         run: echo github.event.head_commit.message
 
       - name: npm install
