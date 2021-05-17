@@ -18,8 +18,7 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
 
       - name: get commit message
-        run: |
-           echo "::`echo $(git log --format=%B -n 2 ${{ github.event.after }})`::"
+        run: echo "`echo $(git log --format=%B -n 2 ${{ github.event.after }})`" | npx commitlint
       - name: show commit message
         run: echo $commitmsg
       - name: show commit message 2
