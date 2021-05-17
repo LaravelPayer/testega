@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-dept: 0
+          fetch-depth: 0
       - name: npm install
         run: npm install
       - name: execute commitlint
