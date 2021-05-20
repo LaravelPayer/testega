@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: GITHUB CONTEXT
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -27,7 +27,7 @@ jobs:
       - name: npm install
         run: npm install
       - name: execute commitlint
-        run: git log -2 --pretty=format:"%s" | npx commitlint --verbose
+        run: git log -1 --pretty=format:"%s" | npx commitlint --verbose
       - name: git log
         run: git log -5 --pretty=format:"%h | %s"
       - name: composer install
