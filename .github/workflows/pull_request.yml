@@ -16,11 +16,8 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-
       - name: get commit message
         run: echo "`echo $(git log --format=%B -n 2 ${{ github.event.after }})`" | npx commitlint
-      - name: show commit message
-        run: echo $commitmsg
       - name: show commit message 2
         run: echo github.event.head_commit.message
 
