@@ -11,15 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: GITHUB CONTEXT
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
 
       - name: get commit message
-        run: |
-           echo "::`echo $(git log --format=%B -n 2 ${{ github.event.after }})`::"
+        run: echo "`echo $(git log --format=%B -n 2 ${{ github.event.after }})`" | npx commitlint
       - name: show commit message
         run: echo $commitmsg
       - name: show commit message 2
@@ -28,7 +27,7 @@ jobs:
       - name: npm install
         run: npm install
       - name: execute commitlint
-        run: git log -2 --pretty=format:"%s" | npx commitlint --verbose
+        run: git log -1 --pretty=format:"%s" | npx commitlint --verbose
       - name: git log
         run: git log -5 --pretty=format:"%h | %s"
       - name: composer install
