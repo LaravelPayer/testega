@@ -23,7 +23,7 @@ jobs:
       - name: show commit message 2
         run: echo github.event.head_commit.message
       - name: execute commitlint
-        run: git log -1 --pretty=format:"%s" | npx commitlint --verbose
+        run: git log -2 --pretty=format:"%s" | npx commitlint --verbose
       - name: git log
         run: git log -5 --pretty=format:"%h | %s"
       - name: composer install
