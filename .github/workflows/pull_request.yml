@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: npm install
-          run: npm install
+        run: npm install
       - name: GITHUB CONTEXT
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
